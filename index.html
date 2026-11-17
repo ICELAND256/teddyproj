@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lasago Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+
+    <!-- PAGE 1: LOGIN -->
+    <section id="login" class="screen active">
+      <nav class="top-links">
+        <a href="#">Language</a>
+        <a href="#">About us</a>
+        <a href="#">Help center</a>
+      </nav>
+      <img class="logo" src="images/logo.png" alt="Lasago Restaurant logo">
+      <form id="loginForm" novalidate>
+        <input type="text" id="username" class="field" placeholder="USERNAME" autocomplete="username">
+        <input type="password" id="password" class="field" placeholder="PASSWORD" autocomplete="current-password">
+        <p id="loginError" class="error" role="alert"></p>
+        <button type="submit" class="btn-login">Log in</button>
+      </form>
+    </section>
+
+    <!-- PAGE 2: MENU -->
+    <section id="menu" class="screen">
+      <header class="greeting">
+        <p id="greetingText">"Gutom ka na ba, Ted? Pumili ka na!"</p>
+        <div class="avatar" aria-label="Profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3 22c0-5 4-8 9-8s9 3 9 8z"/></svg>
+        </div>
+      </header>
+
+      <label class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><line x1="15" y1="15" x2="22" y2="22"/></svg>
+        <input type="search" id="searchInput" placeholder="Search" aria-label="Search menu">
+      </label>
+
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-category="food">FOOD</button>
+        <button class="tab" data-category="drinks">DRINKS</button>
+        <button class="tab" data-category="dessert">DESSERT</button>
+      </div>
+
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <!-- PAGE 3: PRODUCT DETAIL -->
+    <section id="detail" class="screen">
+      <button class="btn-back" data-goto="menu">&larr; Back</button>
+      <img id="detailImg" class="detail-img" src="" alt="">
+      <div class="detail-row">
+        <h2 id="detailName"></h2>
+        <span class="rating"><span class="star">&#9733;</span> <span id="detailRating"></span></span>
+      </div>
+      <p id="detailPrice" class="detail-price"></p>
+      <div class="qty">
+        <button id="plus" aria-label="Increase quantity">+</button>
+        <span id="qtyValue">1</span>
+        <button id="minus" aria-label="Decrease quantity">&minus;</button>
+      </div>
+      <button id="toCheckout" class="btn-main">Checkout</button>
+    </section>
+
+    <!-- PAGE 4: CHECKOUT -->
+    <section id="checkout" class="screen">
+      <div class="checkout-head">
+        <button class="btn-back" data-goto="detail">&larr; Back</button>
+        <h1>Checkout</h1>
+      </div>
+
+      <div class="block">
+        <h3>Deliver to:</h3>
+        <p>Ted Garcia<br>123 Quezon ave ,Manila</p>
+      </div>
+
+      <div class="block">
+        <h3>Payment method:</h3>
+        <label class="radio"><input type="radio" name="payment" value="GCash"> GCash</label>
+        <label class="radio"><input type="radio" name="payment" value="COD"> COD</label>
+      </div>
+
+      <div class="block">
+        <h3>Price &amp; Order Summary:</h3>
+        <div class="sum-row"><span id="sumName"></span><span id="sumQty"></span><span id="sumPrice"></span></div>
+        <div class="sum-row"><span>Delivery fee</span><span></span><span id="sumFee"></span></div>
+        <div class="sum-row total"><span>Total:</span><span></span><span id="sumTotal"></span></div>
+      </div>
+
+      <p id="orderMsg" class="order-msg" role="status"></p>
+      <button id="placeOrder" class="btn-main">Place order</button>
+
+      <footer class="contact">
+        <h3>Contact us:</h3>
+        <div class="contact-row">
+          <a href="https://www.facebook.com/LasagoOfficial" target="_blank" rel="noopener">
+            <img src="images/facebook.png" alt="Facebook"><span>https://www.facebook.com/LasagoOfficial</span>
+          </a>
+          <a href="https://www.instagram.com/lasago.ph" target="_blank" rel="noopener">
+            <img src="images/instagram.png" alt="Instagram"><span>https://www.instagram.com/lasago.ph</span>
+          </a>
+        </div>
+      </footer>
+    </section>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
